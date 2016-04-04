@@ -3,7 +3,7 @@
   <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>JavaMan - Home</title>
+      <title>JavaMan - {{ page.title }}</title>
       <meta name="viewport" content="width=device-width">
 
       <!-- syntax highlighting CSS -->
@@ -32,29 +32,17 @@
         </div>
 		<div class="posts"></div>
 		<div id="firstpane" class="menu_list">
-		
-			<p class="menu_head">java  (1)</p>
+		{% for category in site.categories %}
+			<p class="menu_head">{{ category | first }}  ({{ category | last | size }})</p>
 			<!--文章数量少的情况先，所有类型默认全部打开
 				之后多了，默认类型全部关闭。<div style="display:none" class=menu_body >
 			-->
 			<div style="display:current" class=menu_body >
-			
-			  <a href="/java/2014/09/20/java-concurrency.html">Java 中的并发</a>
-			
+			{% for post in category.last %}
+			  <a href="{{ post.url }}">{{ post.title }}</a>
+			{% endfor %}
 			</div>  
-		
-			<p class="menu_head">others  (2)</p>
-			<!--文章数量少的情况先，所有类型默认全部打开
-				之后多了，默认类型全部关闭。<div style="display:none" class=menu_body >
-			-->
-			<div style="display:current" class=menu_body >
-			
-			  <a href="/others/2015/05/27/scala-eclipse.html">Scala Eclipse开发环境搭建</a>
-			
-			  <a href="/others/2015/05/23/jekyll-disqus.html">Jekyll中添加评论系统</a>
-			
-			</div>  
-		
+		{% endfor %}
 	</div>
 
         <div class="footer">
@@ -68,35 +56,7 @@
         </div>
       </div>
 
-        <div class="content" id="home">
-  <div id="sidebar-button">
-    <img src="/images/sidebar-button.png">
-  </div>
-  <div id="post-info">
-    <div id="cover-photo-container">
-      <img id="cover-photo" src="/images/cover.jpg">
-    </div>
-    <div id="info-container">
-	  <h1 id="title" align="center">JavaMan</h1>
-	</div>
-  </div>
-
-  <div class="post">
-    风来疏竹，<br/>
-	风过而竹不留声；<br/>
-	雁渡寒潭，<br/>
-	雁去而潭不留影。<br/>
-	故君子事来而心始现，<br/>
-	事去而心随空。<br/>
-  </div>
-  <div class="colophon">
-    <p align="center">
-      歪歪的个人BLOG<span class="separator">&bull;</span>
-      <span id="social">联系我<a href="/about.html">留言</a>!</span>
-    </p>
-  </div>
-</div>
-
+        {{ content }}
 
     </div>
 

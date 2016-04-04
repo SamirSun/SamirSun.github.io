@@ -1,2 +1,2 @@
-# SamirSun.github.io
-YY's BLOG
+# javaman
+my blog

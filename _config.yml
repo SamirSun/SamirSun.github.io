@@ -1,0 +1,9 @@
+username: javamanyy
+name: javamanyy
+#baseurl: /javamanyy
+baseurl: /
+markdown: redcarpet
+safe: false
+pygments: true
+title: JavaMan
+disqusname: javaman
