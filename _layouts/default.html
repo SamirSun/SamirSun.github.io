@@ -47,7 +47,7 @@
 			{% if catg == page_catg %}
 				<div style="display:current" class=menu_body >
 				{% for post in category.last %}
-				  <a href="{{ post.url }}">{{catg}} - {{ post.title }}</a>
+				  <a href="{{ post.url }}">{{ post.title }}</a>
 				{% endfor %}
 				</div>  
 			{% else %}
