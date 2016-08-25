@@ -131,3 +131,4 @@ public enum MemberEnum {
 普通会员折扣价格为：80.0
 </pre>
 当然如果需要加会员等级或者其他的对应关系，都可以在枚举中直接加上，建一个私有构造器即可。是不是很好用！一点小技巧吧，欢迎交流<a href="www.javaman.cn">www.javaman.cn</a>
+<a href="https://github.com/SamirSun/dpdemo/tree/master/src/main/java/cn/javaman/strategy">样例源码</a>
